@@ -33,9 +33,7 @@ const Main = () => {
       const userTokenBalance = await Moralis.executeFunction(readOptions);
      
       const bal = Moralis.Units.FromWei(userTokenBalance, 9);
-      console.log(parseInt(bal));
-      console.log(typeof bal);
-
+    
       setTokenBalance(parseFloat(bal).toFixed(2));
     }
 
@@ -62,7 +60,9 @@ const Main = () => {
         <button className='walletBtn' onClick={handleAuth}>{account? "It's Connected!" : "Connect Wallet"}</button>
 
           <div className='accountDisplay'>
-            <h3 className='address'>Address: {account.slice(0,6)+'...'+account.slice(-4)}</h3>
+            <h3 className='address'>Address: {account? account.slice(0,6)+'...'+account.slice(-4): ''}</h3>
+            </div>
+          <div className='accountDisplay'>
             {account?
           <h3 className='address'>TokenBalance: {tokenBalance} BLOCK-E</h3>
           :
@@ -77,7 +77,7 @@ const Main = () => {
               <span className='purchase'> You need to purchase Block-e to accees the wallet </span>
               <div className='newCard'>
                 <div className='walletCardss'>
-                  <a href='https://block-e.app/' target="_blank" > <button className='walletBtn'>Back To Home Page</button> </a>
+                  <a href='https://block-e.app/' target="_blank" > <button className='walletBtn'>Home Page</button> </a>
                 </div>
                 <div className='walletCardss'>
                   <a href='https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0xa9f9aCB92E4E2f16410511D56839A5Bd1d630a60' target="_blank" > <button className='walletBtn'>Purchase Block-E</button>
