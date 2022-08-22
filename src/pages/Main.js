@@ -57,7 +57,7 @@ const Main = () => {
 
       <div className='mainBox'>
         <div className='walletCards'>
-        <button className='walletBtn' onClick={handleAuth}>{account? "It's Connected!" : "Connect Wallet"}</button>
+        <button className='connectBtn' onClick={handleAuth}>{account? "It's Connected!" : "Connect Wallet"}</button>
 
           <div className='accountDisplay'>
             <h3 className='address'>Address: {account? account.slice(0,6)+'...'+account.slice(-4): ''}</h3>
