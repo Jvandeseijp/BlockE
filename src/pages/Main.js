@@ -62,7 +62,7 @@ const Main = () => {
         <button className='walletBtn' onClick={handleAuth}>{account? "It's Connected!" : "Connect Wallet"}</button>
 
           <div className='accountDisplay'>
-            <h3 className='address'>Address: {account}</h3>
+            <h3 className='address'>Address: {account.slice(0,6)+'...'+account.slice(-4)}</h3>
             {account?
           <h3 className='address'>TokenBalance: {tokenBalance} BLOCK-E</h3>
           :
