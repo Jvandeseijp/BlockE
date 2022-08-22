@@ -85,7 +85,7 @@
 
 .mainBox {
     margin: auto;
-    width: 60%;
+    width: calc(60vw);
     padding: 1rem;
     padding-bottom: 2rem;
     border: none;

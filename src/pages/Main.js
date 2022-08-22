@@ -72,7 +72,8 @@ const Main = () => {
         </div>
 
         <div className='mainBtn'>
-          {tokenBalance == 0 && account?
+          {account?
+          tokenBalance == 0 ?
             <div className='walletCardss'>
               <span className='purchase'> You need to purchase Block-e to accees the wallet </span>
               <div className='newCard'>
@@ -89,6 +90,8 @@ const Main = () => {
             <div className='walletCardsss'>
           <Link to="/home" className='walletBtn'> Go To The Dapp </Link>
           </div>
+          
+          :''
           }
           
           
